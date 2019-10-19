@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MarvelApiService } from './services/marvel-api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MarvelCharacters';
+
+  constructor(private marvelApiService : MarvelApiService){
+
+  }
+
+  async ngOnInit() {
+    const data: any = await this.marvelApiService.fetchCharacters();   
+    if (!data.error){
+      console.log(data)
+    }
+    
+  }
 }
