@@ -5,6 +5,9 @@ import { CharacterPage } from './character-page';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutes } from 'src/app/routing';
 
 
 describe('CharacterPage', () => {
@@ -14,7 +17,8 @@ describe('CharacterPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CharacterPage],
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, RouterTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [{
         provide: ActivatedRoute,
         useValue: {

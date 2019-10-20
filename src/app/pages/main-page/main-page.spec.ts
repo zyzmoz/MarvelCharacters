@@ -5,6 +5,7 @@ import { MainPage } from './main-page';
 import { AppRoutes } from 'src/app/routing';
 import { CharacterPage } from '../character-page/character-page';
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 describe('MainPage', () => {
@@ -14,6 +15,7 @@ describe('MainPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MainPage, CharacterPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [HttpClientModule, RouterTestingModule.withRoutes(AppRoutes)],
       
     })

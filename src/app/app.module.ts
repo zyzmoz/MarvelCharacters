@@ -16,7 +16,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     MainPage,
     CharacterPage,
     LoadingComponent
-  ],
+  ], 
   imports: [
     BrowserModule,
     HttpClientModule,
