@@ -1,0 +1,17 @@
+<div class="container">
+  <!-- Loading Component -->
+  <app-loading *ngIf="loading" [message]="'Loading Characters...'"></app-loading>
+  <!-- Character List -->
+  <div *ngIf="!loading">
+    <h1>Characters</h1>
+    <div class="character-list">
+      <ul>
+        <li *ngFor="let character of characters">
+          <a [routerLink]="['/character', character.id]">
+            {{character.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

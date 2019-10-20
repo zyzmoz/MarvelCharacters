@@ -15,12 +15,22 @@ describe('MarvelApiService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should fetch data', () => 
+  it('should fetch characters list', () => 
     async(inject([MarvelApiService], (service : MarvelApiService) => {
-      service.fetchCharacters().then(data => {
+      service.fetchCharacters().then((data: any) => {
         expect(data.error).not.toBeTruthy();
         expect(data.length).toBe(10);
       });
     }))   
   );
+
+  it('should fetch character details', () => async(inject([MarvelApiService], (service : MarvelApiService) => {
+    service.fetchCharacters().then((data: any) => {
+      expect(data.error).not.toBeTruthy();
+      expect(data.length).toBe(10);
+      service.fetchCharacterDetails(data[0].id).then((characterData: any) => {
+        expect(data.error).not.toBeTruthy();      
+      });
+    });
+  })) )
 });

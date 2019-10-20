@@ -1,0 +1,19 @@
+.character-list ul, a, li {
+  text-decoration: none;
+  outline: none;
+  list-style: none;  
+  padding: 0;
+  margin: 0;
+  color: #222;
+}
+
+.character-list a:hover {
+  color: #555;
+}
+
+.character-list {
+  border: 1px solid #999;
+  padding: 15px;
+  border-radius: 3px;
+  background: #d6d6d6;
+}

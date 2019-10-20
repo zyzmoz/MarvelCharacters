@@ -1,0 +1,26 @@
+.card {
+  width: 100%; 
+  display: flex;    
+  padding: 8px;  
+  border: 1px solid #999;  
+  border-radius: 3px;
+  background: #d6d6d6;
+}
+
+.info {
+  padding: 8px;
+}
+
+.thumbnail {
+  min-width: 200px;
+  min-height: 200px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #999;  
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.thumbnail canvas {
+  height: 100%;
+}

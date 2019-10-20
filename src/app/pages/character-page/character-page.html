@@ -1,0 +1,19 @@
+<div class="container"> 
+  <!-- Loading component  -->
+  <app-loading *ngIf="loading" [message]="'Loading Character Details...'"></app-loading>
+  <!-- CharacterList -->
+  <div *ngIf="!loading">
+    <h1>{{character.name}} Details</h1>
+    <div class="card">
+      <div class="thumbnail">        
+        <canvas #canvas></canvas>
+      </div>
+      <div class="info">
+        <b>ID:{{character.id}}</b>
+        <h2>Name:{{character.name}}</h2>
+        <p><b>Description:</b>{{character.description}}</p>
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="['/']" class="btn btn-back">Back</a>
+</div>
